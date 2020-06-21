@@ -5,10 +5,55 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Pure Javascript Excel Application</title>
 </head>
 <body>
-    <div id="app" class="container"></div>
+    <div id="app" class="container">
+        <div class="excel">
+            <!--Общий заголовок-->
+            <div class="excel__header">
+                <!--Заголовок таблицы-->
+                <input type="text" class="input" value="Новая таблица" />
+                <!--Панель с кнопками (справа)-->
+                <div>
+                    <div class="button">
+                        <span class="material-icons">exit_to_app</span>
+                    </div>
+                    <div class="button">
+                        <span class="material-icons">delete</span>
+                    </div>
+                </div>
+            </div>
+            <!--Панель тулбара-->
+            <div class="excel__toolbar">
+                <div class="button">
+                    <span class="material-icons">format_align_left</span>
+                </div>
+                <div class="button">
+                    <span class="material-icons">format_align_center</span>
+                </div>
+                <div class="button">
+                    <span class="material-icons">format_align_right</span>
+                </div>
+                <div class="button">
+                    <span class="material-icons">format_bold</span>
+                </div>
+                <div class="button">
+                    <span class="material-icons">format_italic</span>
+                </div>
+                <div class="button">
+                    <span class="material-icons">format_underlined</span>
+                </div>
+            </div>
+            <!--Строка с формулой-->
+            <div class="excel__formula">
+            </div>
+            <!--Основная таблица-->
+            <div class="excel__table">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
