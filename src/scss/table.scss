@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixins";
+
+.excel__table {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: $header-height + $toolbar-height + $formula-height;
+  overflow-x: auto;
+  padding-bottom: 2px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    min-height: 20px;
+    height: $row-height;
+  }
+
+  .row-info {
+    @include info-cell();
+    @include border-left();
+    @include border-right();
+    @include border-bottom();
+  }
+
+  .row-data {
+    display: flex;
+  }
+
+  .column {
+    @include info-cell();
+    @include border-bottom();
+    @include border-right();
+    width: $cell-width;
+  }
+
+  .cell {
+    @include data-cell();
+
+    &.selected {
+      border-style: none;
+      outline: 2px solid #3c74ff;
+      z-index: 2;
+    }
+  }
+
+}
