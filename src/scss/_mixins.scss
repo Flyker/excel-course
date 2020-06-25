@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin button($color: green) {
   height: 24px;
   min-width: 24px;
@@ -6,6 +8,7 @@
   position: relative;
   display: inline-block;
   color: rgba(0, 0, 0, .7);
+  user-select: none;
 
   & span {
     font-size: 18px;
@@ -19,4 +22,52 @@
     background-color: #ddd;
     cursor: pointer;
   }
+}
+
+@mixin border-all($color: $border-color) {
+  border: 1px solid $color;
+}
+
+@mixin border-top($color: $border-color) {
+  border-top: 1px solid $color;
+}
+
+@mixin border-bottom($color: $border-color) {
+  border-bottom: 1px solid $color;
+}
+
+@mixin border-left($color: $border-color) {
+  border-left: 1px solid $color;
+}
+
+@mixin border-right($color: $border-color) {
+  border-right: 1px solid $color;
+}
+
+@mixin info-cell() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $info-cell-color;
+  min-width: $info-cell-width;
+  height: 100%;
+}
+
+@mixin data-cell() {
+  min-width: $info-cell-width;
+  width: $cell-width;
+  padding: 5px;
+  height: 100%;
+  border: 1px solid #e2e3e3;
+  border-top: none;
+  border-left: none;
+  white-space: nowrap;
+  color: #111;
+  outline: none;
+}
+
+@mixin clear-list() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
