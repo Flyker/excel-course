@@ -14,6 +14,7 @@ const jsLoaders = () => {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
       },
     },
   ]
@@ -26,9 +27,9 @@ const jsLoaders = () => {
 }
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, './'),
   mode: 'development',
-  entry: ['@babel/polyfill', './index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
@@ -48,7 +49,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: 'index.html',
+      template: './src/index.html',
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd,
