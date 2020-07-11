@@ -9,6 +9,7 @@
   "rules": {
     "semi": "off",
     "arrow-parens": "off",
+    "operator-linebreak": "off",
     "require-jsdoc": "off"
   }
 }
