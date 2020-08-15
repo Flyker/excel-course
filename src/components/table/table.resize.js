@@ -14,7 +14,7 @@ export function resizeHandler($root, event) {
     [antiSideProp]: '0px',
   })
 
-  document.onmousemove = e => {
+  const resizeMove = e => {
     e.preventDefault()
     if (isColumnResizing) {
       const delta = e.pageX - coords.right
@@ -25,9 +25,9 @@ export function resizeHandler($root, event) {
     }
   }
 
-  document.onmouseup = (e) => {
-    document.onmousemove = null
-    document.onmouseup = null
+  const resizeEnd = (e) => {
+    document.removeEventListener('mousemove', resizeMove)
+    document.removeEventListener('mouseup', resizeEnd)
 
     if (isColumnResizing) {
       const delta = e.pageX - coords.right
@@ -48,4 +48,7 @@ export function resizeHandler($root, event) {
     //
     $resizer.css({ opacity: null, bottom: null, right: null })
   }
+  //
+  document.addEventListener('mousemove', resizeMove)
+  document.addEventListener('mouseup', resizeEnd)
 }
