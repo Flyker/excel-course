@@ -17,10 +17,15 @@
   }
 
   .row-info {
-    @include info-cell();
-    @include border-left();
-    @include border-right();
-    @include border-bottom();
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $info-cell-width;
+    height: 100%;
+    border: 1px solid $border-color;
+    background: #f8f9fa;
+    border-top: none;
   }
 
   .row-data {
@@ -28,17 +33,34 @@
   }
 
   .column {
-    @include info-cell();
-    @include border-bottom();
-    @include border-right();
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    min-width: 40px;
     width: $cell-width;
+    border: 1px solid $border-color;
+    border-top: 0;
+    border-left: 0;
+    height: 100%;
   }
 
   .cell {
-    @include data-cell();
+    min-width: 40px;
+    padding: 5px;
+    width: $cell-width;
+    height: 100%;
+    border: 1px solid #e2e3e3;
+    border-top: 0;
+    border-left: 0;
+    color: #111;
+    white-space: nowrap;
+    outline: none;
+
 
     &.selected {
-      border-style: none;
+      border: none;
       outline: 2px solid $primary-color;
       z-index: 2;
     }
@@ -46,13 +68,14 @@
 
   .col-resize, .row-resize {
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
+    background: $primary-color;
     opacity: 0;
-    background-color: $primary-color;
+    z-index: 1000;
 
     &:hover {
-      opacity: 1;
+      opacity: 1!important;
     }
   }
 
