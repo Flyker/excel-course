@@ -10,15 +10,20 @@ function toCell() {
 }
 
 function toColumn(col) {
+  const colResize = '<div class="col-resize" data-resize="col"></div>'
   return `
-    <div class="column">${col}</div>
+    <div class="column">${col}${colResize}</div>
   `
 }
 
 function createRow(index, content) {
+  const rowHeaderContent = index ? index : ''
+  const rowResize = index ?
+    `<div class="row-resize" data-resize="row"></div>` :
+    ''
   return `
     <div class="row">                
-      <div class="row-info">${index ? index : ''}</div>      
+      <div class="row-info">${rowHeaderContent}${rowResize}</div>      
       <div class="row-data">${content}</div>
     </div>
   `

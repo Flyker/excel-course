@@ -51,6 +51,7 @@
   background-color: $info-cell-color;
   min-width: $info-cell-width;
   height: 100%;
+  position: relative;
 }
 
 @mixin data-cell() {
