@@ -1,6 +1,6 @@
 const CODES = {
   A: 65,
-  Z: 90
+  Z: 90,
 }
 
 function toCell(_, col) {
@@ -9,10 +9,10 @@ function toCell(_, col) {
   `
 }
 
-function toColumn(col) {
+function toColumn(col, index) {
   const colResize = '<div class="col-resize" data-resize="col"></div>'
   return `
-    <div class="column">${col}${colResize}</div>
+    <div class="column" data-type="resizable" data-col="${index}">${col}${colResize}</div>
   `
 }
 

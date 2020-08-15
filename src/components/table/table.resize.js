@@ -46,7 +46,7 @@ export function resizeHandler($root, event) {
       $parent.css({height: value + 'px'})
     }
     //
-    $resizer.css({ opacity: null, bottom: null, right: null })
+    $resizer.css({opacity: null, bottom: null, right: null})
   }
   //
   document.addEventListener('mousemove', resizeMove)
