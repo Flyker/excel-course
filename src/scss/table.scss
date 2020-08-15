@@ -17,15 +17,10 @@
   }
 
   .row-info {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: $info-cell-width;
-    height: 100%;
-    border: 1px solid $border-color;
-    background: #f8f9fa;
-    border-top: none;
+    @include info-cell();
+    @include border-left();
+    @include border-right();
+    @include border-bottom();
   }
 
   .row-data {
@@ -33,34 +28,17 @@
   }
 
   .column {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f8f9fa;
-    min-width: 40px;
+    @include info-cell();
+    @include border-bottom();
+    @include border-right();
     width: $cell-width;
-    border: 1px solid $border-color;
-    border-top: 0;
-    border-left: 0;
-    height: 100%;
   }
 
   .cell {
-    min-width: 40px;
-    padding: 5px;
-    width: $cell-width;
-    height: 100%;
-    border: 1px solid #e2e3e3;
-    border-top: 0;
-    border-left: 0;
-    color: #111;
-    white-space: nowrap;
-    outline: none;
-
+    @include data-cell();
 
     &.selected {
-      border: none;
+      border-style: none;
       outline: 2px solid $primary-color;
       z-index: 2;
     }
@@ -68,14 +46,13 @@
 
   .col-resize, .row-resize {
     position: absolute;
-    bottom: 0;
     right: 0;
-    background: $primary-color;
+    bottom: 0;
     opacity: 0;
-    z-index: 1000;
+    background-color: $primary-color;
 
     &:hover {
-      opacity: 1!important;
+      opacity: 1;
     }
   }
 
